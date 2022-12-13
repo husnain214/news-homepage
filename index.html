@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | News homepage</title>
+</head>
+<body>
+  <header class="news-header container">
+    <nav class="navigation flex">
+      <div class="navigation_logo">
+        <img src="./assets/images/logo.svg" alt="company logo">
+      </div>
+        <ul class="navigation--list flex" role="list" style="--gap: 2rem;">
+          <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Home</a></li>
+          <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">New</a></li>
+          <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Popular</a></li>
+          <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Trending</a></li>
+          <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Categories</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main class="news-grid container grid" style="--gap: 2rem; padding: 3em 0;">
+    <section class="news-grid--main-headline grid">
+      <picture class="main--headline__image">
+        <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 500px)" />
+
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="">
+      </picture>
+
+      <h1 class="main--headline__heading text-primary-800 fs-800 fw-bold">The Bright Future of Web 3.0?</h1>
+      
+      <div class="headline__subtitle flex">
+        <p class="headline__subtitle fw-regular fs-500 text-primary-400">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+  
+        <button class="main-headline__button text-neutral bg-accent-200 letter-spacing-1 uppercase">Read more</button>
+      </div>
+    </section>
+
+    <aside class="news-grid--new-headlines bg-primary-800">
+      <h2 class="new-headlines__heading text-accent-100 fs-700 fw-semi-bold">New</h2>
+                
+      <div class="new-headlines--headline">
+        <h3 class="headline__heading text-neutral fs-500 fw-semi-bold">Hydrogen VS Electric Cars</h3>
+
+        <p class="headline__subtitle text-primary-400 fw-regular fs-300">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </div>
+
+      <div class="new-headlines--headline">
+        <h3 class="headline__heading text-neutral fs-500 fw-semi-bold">The Downsides of AI Artistry</h3>
+
+        <p class="headline__subtitle text-primary-400 fw-regular fs-300">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </div>
+
+      <div class="new-headlines--headline">
+        <h3 class="headline__heading text-neutral fs-500 fw-semi-bold">Is VC Funding Drying Up?</h3>
+
+        <p class="headline__subtitle text-primary-400 fw-regular fs-300">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </div>
+    </aside>
+
+    <section class="news-grid--additional-articles grid">
+      <article class="additional-articles__article grid">
+        <img 
+          src="./assets/images/image-retro-pcs.jpg" 
+          alt="image-retro-pcs" 
+          class="article__image"
+        >
+
+        <div class="article__details">
+          <span class = "article__details--number fs-600 fw-semi-bold text-primary-400">01</span>
+          <h4 class = "article__details--heading fs-400 text-primary-800">Reviving Retro PCs</h4>
+          <p class = "article__details--subtitle fw-regular fs-300 text-primary-400">What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+
+      <article class="additional-articles__article grid">
+        <img 
+          src="./assets/images/image-top-laptops.jpg" 
+          alt="image-top-laptops" 
+          class="article__image"
+        >
+
+        <div class="article__details">
+          <span class = "article__details--number fs-600 fw-semi-bold text-primary-400">02</span>
+          <h4 class = "article__details--heading fs-400 text-primary-800">Top 10 Laptops of 2022</h4>
+          <p class = "article__details--subtitle fw-regular fs-300 text-primary-400">Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+
+      <article class="additional-articles__article grid">
+        <img 
+          src="./assets/images/image-gaming-growth.jpg" 
+          alt="image-gaming-growth" 
+          class="article__image"
+        >
+
+        <div class="article--details">
+          <span class = "article--details__number fs-600 fw-semi-bold text-primary-400">03</span>
+          <h4 class = "article--details__heading fs-400 text-primary-800">The Growth of Gaming</h4>
+          <p class = "article--details__subtitle fw-regular fs-300 text-primary-400">How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </section>
+  </main>  
+  
+  <footer class="attribution bg-primary-800" style="padding: 1em 0;">
+    <p class="fw-regular fs-300 text-neutral center">Challenge by <a class="text-accent-200 fw-semi-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p> 
+    <p class="fw-regular fs-300 text-neutral center">Coded by <a class="text-accent-200 fw-semi-bold" href="https://fantastic-khapse-2cca16.netlify.app/">Husnain Zahid</a>.</p>
+  </footer>
+</body>
+</html>

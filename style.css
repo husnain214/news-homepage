@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+/* ------------------- */
+/* Custom Properties   */
+/* ------------------- */
+
+:root {
+    --clr-primary-800: 240 100% 5%;
+    --clr-primary-700: 236 13% 42%;
+    --clr-primary-400: 234 12% 55%;
+
+    --clr-accent-200: 5 85% 63%;
+    --clr-accent-100: 35 77% 62%;
+
+    --clr-neutral: 36 100% 99%;
+
+    --ff-primary: 'Inter', sans-serif;
+
+    --fw-bold: 800;
+    --fw-semi-bold: 700;
+    --fw-regular: 400;
+
+    --fs-800: 3rem;
+    --fs-700: 2.7rem;
+    --fs-600: 1.8rem;
+    --fs-500: 1.1rem;
+    --fs-400: 1rem;
+    --fs-300: .9rem
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+*, 
+*::before, 
+*::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: var(--ff-primary);
+}
+
+body {
+    font-size: var(--fs-400);
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: hsl( var(--clr-neutral) );
+    margin-top: 2em;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+select {
+    font: inherit;
+    border: none; 
+    outline: none;
+    background-color: transparent;
+}
+  
+button { cursor: pointer; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'], 
+ol[role='list'] {
+    list-style: none;
+}
+
+a { text-decoration: none; }
+  
+/* A elements that don't have a class get default styles */
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------- */
+/* Utility Classes     */
+/* ------------------- */
+
+/* general */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    margin-inline: auto;
+    max-width: min(100% - 2rem, 70em);
+}
+
+/* colors */
+.bg-primary-800 { background-color: hsl( var(--clr-primary-800) ); }
+.bg-primary-700 { background-color: hsl( var(--clr-primary-700) ); }
+.bg-primary-400 { background-color: hsl( var(--clr-primary-400) ); }
+
+.bg-accent-200 { background-color: hsl( var(--clr-accent-200) ); }
+.bg-accent-100 { background-color: hsl( var(--clr-accent-100) ); }
+
+.bg-neutral { background-color: hsl( var(--clr-neutral) ); }
+
+/* typography */
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.text-primary-800 { color: hsl( var(--clr-primary-800) ); }
+.text-primary-700 { color: hsl( var(--clr-primary-700) ); }
+.text-primary-400 { color: hsl( var(--clr-primary-400) ); }
+
+.text-accent-200 { color: hsl( var(--clr-accent-200) ); }
+.text-accent-100 { color: hsl( var(--clr-accent-100) ); }
+
+.text-neutral { color: hsl( var(--clr-neutral) ); }
+
+.uppercase { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-semi-bold { font-weight: var(--fw-semi-bold); }
+.fw-bold { font-weight: var(--fw-bold); }
+
+h1 { line-height: 1.2; }
+
+.navigation.flex {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.news-grid.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "news-grid--main-headline news-grid--main-headline news-grid--new-headlines"
+                         "news-grid--main-headline news-grid--main-headline news-grid--new-headlines"
+                         "news-grid--additional-articles news-grid--additional-articles news-grid--additional-articles";
+}
+
+.news-grid--main-headline { grid-area: news-grid--main-headline; }
+.news-grid--new-headlines { grid-area: news-grid--new-headlines; }
+.news-grid--additional-articles { grid-area: news-grid--additional-articles; }
+
+
+
+.news-grid--main-headline.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "main--headline__image main--headline__image"
+                         "main--headline__heading headline__subtitle";
+}
+
+.main--headline__image { grid-area: main--headline__image; }
+.main--headline__heading { grid-area: main--headline__heading; }
+.headline__subtitle { grid-area: headline__subtitle; }
+
+.headline__subtitle.flex {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.news-grid--additional-articles.grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-headline__button {
+    padding: .8em 1.5em;
+}
+
+.additional-articles__article.grid { 
+    grid-template-columns: 1fr 3fr;
+    align-items: stretch;
+}
+
+
+
+
+
