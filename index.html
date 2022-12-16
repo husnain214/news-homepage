@@ -9,12 +9,23 @@
   
   <title>Frontend Mentor | News homepage</title>
 </head>
-<body>
+<body class="flex">
   <header class="news-header container">
-    <nav class="navigation flex">
+    <div class="navigation flex">
       <div class="navigation_logo">
         <img src="./assets/images/logo.svg" alt="company logo">
       </div>
+
+      <nav class="primary-navigation">
+        <button class="navigation--button" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="visually-hidden">Menu</span>
+          <svg class="navigation--button__hamburger" viewBox="0 0 100 100" fill="#000" width="50">
+            <rect class="hamburger--line line__top" width="80" height="7" x="10" y="25" rx="4"></rect>
+            <rect class="hamburger--line line__middle" width="80" height="7" x="10" y="45" rx="4"></rect>
+            <rect class="hamburger--line line__bottom" width="80" height="7" x="10" y="65" rx="4"></rect>
+          </svg>
+        </button>
+  
         <ul class="navigation--list flex" role="list" style="--gap: 2rem;">
           <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Home</a></li>
           <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">New</a></li>
@@ -22,7 +33,8 @@
           <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Trending</a></li>
           <li class="navigation--list__link fw-regular fs-400"><a class="text-primary-700" href="#">Categories</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main class="news-grid container grid" style="--gap: 2rem; padding: 3em 0;">
@@ -110,9 +122,19 @@
     </section>
   </main>  
   
-  <footer class="attribution bg-primary-800" style="padding: 1em 0;">
-    <p class="fw-regular fs-300 text-neutral center">Challenge by <a class="text-accent-200 fw-semi-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p> 
-    <p class="fw-regular fs-300 text-neutral center">Coded by <a class="text-accent-200 fw-semi-bold" href="https://fantastic-khapse-2cca16.netlify.app/">Husnain Zahid</a>.</p>
+  <footer class=" bg-primary-800" style="padding: 1em 0;">
+    <div class="footer--container container">
+      <p class="footer--container__p fw-regular fs-300 text-neutral center">Challenge by <a class="text-accent-200 fw-semi-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p> 
+      <p class="footer--container__p fw-regular fs-300 text-neutral center">Coded by <a class="text-accent-200 fw-semi-bold" href="https://fantastic-khapse-2cca16.netlify.app/">Husnain Zahid</a>.</p>
+    </div>
   </footer>
+
+  <script>
+    const hamburgerBtn = document.querySelector(".navigation--button")
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.ariaExpanded = hamburgerBtn.ariaExpanded === "false" ? "true" : "false"
+    })
+  </script>
 </body>
 </html>
