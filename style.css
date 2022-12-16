@@ -197,13 +197,9 @@ h3 { padding-bottom: .7em; }
     justify-content: space-between;
 }
 
-.news-grid--additional-articles.grid {
-    grid-template-columns: repeat(3, 1fr);
-}
+.news-grid--additional-articles.grid { grid-template-columns: repeat(3, 1fr); }
 
-.main-headline__button {
-    padding: .8em 1.5em;
-}
+.main-headline__button { padding: .8em 1.5em; }
 
 .additional-articles__article.grid { 
     grid-template-columns: 1fr 3fr;
