@@ -50,7 +50,7 @@ body {
     background-color: hsl( var(--clr-neutral) );
     flex-direction: column;
     justify-content: space-between;
-    --gap: 0;
+    --gap: 3rem;
 }
 
 /* Make images easier to work with */
@@ -167,13 +167,12 @@ h1 { line-height: 1.2; }
 
 header { 
     width: 100%; 
-    margin: 2em 0;
+    padding-top: 3em;
 }
 
 .navigation.flex {
     justify-content: space-between;
     align-items: center;
-    padding: 1em 0;
 }
 
 .navigation--button {
@@ -258,7 +257,6 @@ header {
     grid-template-areas: "news-grid--main-headline news-grid--main-headline news-grid--new-headlines"
                          "news-grid--main-headline news-grid--main-headline news-grid--new-headlines"
                          "news-grid--additional-articles news-grid--additional-articles news-grid--additional-articles";
-    padding-bottom: 3em;
 }
 
 .news-grid--main-headline { grid-area: news-grid--main-headline; }
