@@ -216,6 +216,7 @@ header {
 .navigation--list { 
     overflow: hidden; 
     transition: width 0ms ease-in;
+    box-shadow: 0 0 0 200vmax hsl( var(--clr-shadow) / .2);
 }
 
 .navigation--list li { position: relative; }
@@ -235,8 +236,8 @@ header {
 .navigation--list li:hover a { color: hsl( var(--clr-accent-200) ); }
 
 .navigation--button[aria-expanded="true"] ~ .navigation--list {
-    transition: width 200ms ease-in;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.2);
+    --clr-shadow: var(--clr-primary-800);
+    transition: width 0ms ease-in, right 200ms ease-in;
     position: absolute;
     right: 0;
     top: 0;
@@ -313,7 +314,7 @@ h3 { padding-bottom: .7em; }
   
 @media (max-width: 598px) {
     .navigation--button  { display: block; }
-    .navigation--button[aria-expanded="false"] ~ .navigation--list { width: 0; }
+    .navigation--button[aria-expanded="false"] ~ .navigation--list { width: 0; right: -100vw; }
     
     .news-grid.grid {
         grid-template-columns: 1fr;
